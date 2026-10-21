@@ -30,3 +30,20 @@ jobs:
 
       - name: Run tests
         run: bundle exec rake test
+
+  docs:
+    name: Documentation (mkdocs --strict)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build documentation
+        run: |
+          pip install --quiet -r docs/requirements.txt
+          mkdocs build --strict
