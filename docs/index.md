@@ -8,17 +8,17 @@ Outlook, Thunderbird and most other calendar apps can read.
 Every time the site is rebuilt, the feed is regenerated. Calendar apps that
 subscribed to it pick up new, moved and cancelled events on their own.
 
-Throughout this documentation we build the website of **Kingsbridge FC**, a
-(fictional) football club that wants its fans to have every fixture in their
-calendar:
+Throughout this documentation we build the website of **AFC Richmond**, the
+(fictional) Greyhounds from *Ted Lasso*, who want every fan to have every
+fixture in their calendar:
 
 ```yaml
 # _data/fixtures.yml
 - id: 2026-league-01
   kickoff: "2026-08-15 15:00"
-  home: Kingsbridge FC
-  away: Harbour Town
-  venue: Riverside Stadium
+  home: AFC Richmond
+  away: Crystal Palace
+  venue: Nelson Road
 ```
 
 ```yaml
@@ -26,7 +26,7 @@ calendar:
 ical_feeds:
   - path: fixtures.ics
     source: data:fixtures
-    name: "Kingsbridge FC · Fixtures"
+    name: "AFC Richmond · Fixtures"
     fields:
       start: kickoff
       title: "{{ home }} vs {{ away }}"
@@ -53,5 +53,5 @@ ical_feeds:
 ## Next steps
 
 - [Getting started](getting-started.md): install the plugin and publish your first feed
-- [Example: a football club](example.md): a complete site setup with several feeds
+- [Example: AFC Richmond](example.md): a complete site setup with several feeds
 - [Configuration reference](configuration.md): every option at a glance

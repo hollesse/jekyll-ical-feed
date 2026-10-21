@@ -34,6 +34,6 @@ nav:
       - Field mapping: fields.md
       - Dates, times and time zones: dates.md
       - Subscribing and updates: subscribing.md
-  - "Example: a football club": example.md
+  - "Example: AFC Richmond": example.md
   - Configuration reference: configuration.md
   - Development: development.md

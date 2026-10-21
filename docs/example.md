@@ -1,7 +1,8 @@
-# Example: a football club
+# Example: AFC Richmond
 
-This page puts everything together for the website of **Kingsbridge FC**. The
-club wants to offer its fans:
+This page puts everything together for the website of **AFC Richmond**. Since
+Ted Lasso arrived from Kansas, the club has more fans than ever, and Higgins
+wants to offer them:
 
 - one calendar with **all first-team fixtures**,
 - one with **home games only**, for season ticket holders,
@@ -12,8 +13,8 @@ club wants to offer its fans:
 
 ```yaml
 # _config.yml
-title: "Kingsbridge FC"
-url: "https://kingsbridge-fc.example"
+title: "AFC Richmond"
+url: "https://afc-richmond.example"
 timezone: Europe/London
 
 plugins:
@@ -30,48 +31,50 @@ stable `id`, a `kickoff`, the two teams and a few optional fields.
 - id: 2026-league-01
   competition: League
   kickoff: "2026-08-15 15:00"
-  home: Kingsbridge FC
-  away: Harbour Town
-  venue: Riverside Stadium
-  city: Kingsbridge
-  preview: Season opener under the floodlights.
-  tickets: https://tickets.kingsbridge-fc.example/2026-league-01
-  report: /news/2026/08/15/harbour-town-report/
+  home: AFC Richmond
+  away: Crystal Palace
+  venue: Nelson Road
+  city: Richmond
+  preview: Season opener at Nelson Road. Believe.
+  tickets: https://tickets.afc-richmond.example/2026-league-01
+  report: /news/2026/08/15/crystal-palace-report/
 
 - id: 2026-league-02
   competition: League
   kickoff: "2026-08-22 17:30"
-  home: Northgate Rovers
-  away: Kingsbridge FC
-  venue: Northgate Park
-  city: Northgate
-  stream: https://tv.kingsbridge-fc.example/live
+  home: Manchester City
+  away: AFC Richmond
+  venue: Etihad Stadium
+  city: Manchester
+  preview: Jamie Tartt returns to the Etihad. Expect fireworks.
+  stream: https://tv.afc-richmond.example/live
 
 - id: 2026-cup-r1
   competition: Cup
   kickoff: "2026-08-26 19:45"
   duration: 150            # extra time and penalties are possible
-  home: Kingsbridge FC
-  away: Eastfield Athletic
-  venue: Riverside Stadium
-  city: Kingsbridge
+  preview: Rupert's West Ham at Nelson Road. Barbecue sauce.
+  home: AFC Richmond
+  away: West Ham United
+  venue: Nelson Road
+  city: Richmond
 
 - id: 2026-league-03
   competition: League
   kickoff: "2026-08-29"    # kickoff time not announced yet → all-day event
-  home: Kingsbridge FC
-  away: Ford United
-  venue: Riverside Stadium
-  city: Kingsbridge
+  home: AFC Richmond
+  away: Tottenham Hotspur
+  venue: Nelson Road
+  city: Richmond
 
 - id: 2026-league-04
   competition: League
   kickoff: "2026-09-05 15:00"
   status: postponed
-  home: Westmoor Town
-  away: Kingsbridge FC
-  venue: Moor Lane
-  city: Westmoor
+  home: Everton
+  away: AFC Richmond
+  venue: Goodison Park
+  city: Liverpool
 ```
 
 ## The feeds
@@ -84,7 +87,7 @@ avoids repeating it.
 ical_feeds:
   - path: calendar/fixtures.ics
     source: data:fixtures.2026
-    name: "Kingsbridge FC · All fixtures"
+    name: "AFC Richmond · All fixtures"
     refresh: PT6H
     transparent: true
     fields: &fixture
@@ -103,29 +106,29 @@ ical_feeds:
 
   - path: calendar/home.ics
     source: data:fixtures.2026
-    name: "Kingsbridge FC · Home games"
+    name: "AFC Richmond · Home games"
     refresh: PT6H
     transparent: true
-    where: { home: Kingsbridge FC }
+    where: { home: AFC Richmond }
     fields: *fixture
 ```
 
 What this does:
 
 - **`start`, `duration`**: kickoff plus 105 minutes, or the match's own
-  `duration` (150 for the cup tie). The match against Ford United has no time
+  `duration` (150 for the cup tie). The match against Tottenham Hotspur has no time
   yet and appears as an all-day event on 29 August.
-- **`title`**: `Kingsbridge FC vs Harbour Town`, `Cup: Kingsbridge FC vs
-  Eastfield Athletic` and `POSTPONED: Westmoor Town vs Kingsbridge FC`.
-- **`location`**: `Riverside Stadium, Kingsbridge`.
+- **`title`**: `AFC Richmond vs Crystal Palace`, `Cup: AFC Richmond vs
+  West Ham United` and `POSTPONED: Everton vs AFC Richmond`.
+- **`location`**: `Nelson Road, Richmond`.
 - **`url`**: every event links to the match on the fixtures page.
-- **`uid: id`**: when the Ford United kickoff is announced, subscribers' all-day
+- **`uid: id`**: when the Tottenham Hotspur kickoff is announced, subscribers' all-day
   entry turns into a timed one instead of being duplicated.
-- **`links`**: only the links a match actually has are added. The Harbour Town
-  event gets tickets and the match report; the away game at Northgate gets the
+- **`links`**: only the links a match actually has are added. The Crystal Palace
+  event gets tickets and the match report; the away game at the Etihad gets the
   live stream.
 - **`where`**: the home feed keeps only matches where `home` is
-  `Kingsbridge FC`.
+  `AFC Richmond`.
 - **`transparent`**: matches don't show the subscriber as busy.
 
 !!! tip "Long templates"
@@ -136,16 +139,16 @@ The resulting event for the season opener:
 
 ```text
 BEGIN:VEVENT
-UID:…@kingsbridge-fc.example
+UID:…@afc-richmond.example
 DTSTAMP:20260801T120000Z
 DTSTART:20260815T140000Z
 DTEND:20260815T154500Z
-SUMMARY:Kingsbridge FC vs Harbour Town
-LOCATION:Riverside Stadium\, Kingsbridge
-DESCRIPTION:Season opener under the floodlights.\n\nTickets: https://ticket
- s.kingsbridge-fc.example/2026-league-01\n\nMatch report: https://kingsbrid
- ge-fc.example/news/2026/08/15/harbour-town-report/
-URL:https://kingsbridge-fc.example/fixtures/#2026-league-01
+SUMMARY:AFC Richmond vs Crystal Palace
+LOCATION:Nelson Road\, Richmond
+DESCRIPTION:Season opener at Nelson Road. Believe.\n\nTickets: https://tick
+ ets.afc-richmond.example/2026-league-01\n\nMatch report: https://afc-richm
+ ond.example/news/2026/08/15/crystal-palace-report/
+URL:https://afc-richmond.example/fixtures/#2026-league-01
 TRANSP:TRANSPARENT
 END:VEVENT
 ```
@@ -169,20 +172,20 @@ collections:
 
 ```markdown
 ---
-# _women/2026-09-06-harbour-town.md
-title: Kingsbridge FC Women vs Harbour Town Ladies
+# _women/2026-09-06-crystal-palace.md
+title: AFC Richmond Women vs Crystal Palace Women
 kickoff: "2026-09-06 14:00"
-venue: Riverside Stadium
-summary: Top of the table clash.
+venue: Nelson Road
+summary: Football is life!
 ---
-Full preview and line-ups …
+Full preview and line-ups. Biscuits with the boss at 10 am …
 ```
 
 ```yaml
 # _config.yml, added to ical_feeds
   - path: calendar/women.ics
     source: collection:women
-    name: "Kingsbridge FC Women · Fixtures"
+    name: "AFC Richmond Women · Fixtures"
     transparent: true
     fields:
       start: kickoff

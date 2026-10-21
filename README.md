@@ -1,7 +1,7 @@
 # jekyll-ical-feed
 
 A Jekyll plugin that generates subscribable iCalendar (`.ics`) feeds from data
-files, collections or posts — e.g. a fixtures calendar for a football club
+files, collections or posts — e.g. a fixtures calendar for AFC Richmond
 that fans can subscribe to.
 
 **Documentation: <https://jekyll-ical-feed.readthedocs.io/>**
@@ -17,13 +17,13 @@ end
 
 ```yaml
 # _config.yml
-url: "https://kingsbridge-fc.example"
+url: "https://afc-richmond.example"
 timezone: Europe/London
 
 ical_feeds:
   - path: fixtures.ics
     source: data:fixtures
-    name: "Kingsbridge FC · Fixtures"
+    name: "AFC Richmond · Fixtures"
     fields:
       start: kickoff
       title: "{{ home }} vs {{ away }}"
@@ -36,9 +36,9 @@ ical_feeds:
 # _data/fixtures.yml
 - id: 2026-league-01
   kickoff: "2026-08-15 15:00"
-  home: Kingsbridge FC
-  away: Harbour Town
-  venue: Riverside Stadium
+  home: AFC Richmond
+  away: Crystal Palace
+  venue: Nelson Road
 ```
 
 ```liquid

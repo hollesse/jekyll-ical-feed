@@ -14,7 +14,7 @@ The `webcal` filter replaces `http://` or `https://` with `webcal://`:
 ```
 
 ```html
-<a href="webcal://kingsbridge-fc.example/fixtures.ics">Subscribe to all fixtures</a>
+<a href="webcal://afc-richmond.example/fixtures.ics">Subscribe to all fixtures</a>
 ```
 
 For Google Calendar, which has no `webcal` handler on the web, offer the
@@ -55,7 +55,7 @@ fields:
 ```
 
 The value is hashed, and the site's host name is appended, e.g.
-`4f3c…@kingsbridge-fc.example`.
+`4f3c…@afc-richmond.example`.
 
 ## Refresh interval
 
@@ -83,7 +83,7 @@ transparent: true
 ## Postponed and cancelled matches
 
 Removing a match from the data removes it from the feed, and subscribed
-calendars drop it on the next refresh.
+calendars drop it on the next refresh. Be a goldfish.
 
 To keep a postponed match visible, mark it in the title:
 

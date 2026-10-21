@@ -7,10 +7,10 @@ produces one `.ics` file.
 ical_feeds:
   - path: fixtures.ics              # output path (required)
     source: data:fixtures           # data:<file>[.<key>…] | collection:<label> | posts (required)
-    name: "Kingsbridge FC"          # calendar name shown in clients (default: site.title)
+    name: "AFC Richmond"            # calendar name shown in clients (default: site.title)
     timezone: Europe/London         # X-WR-TIMEZONE hint (default: site.timezone)
     refresh: PT6H                   # refresh hint for clients, ISO 8601 duration
-    where: { home: Kingsbridge FC } # only items whose fields equal these values
+    where: { home: AFC Richmond }   # only items whose fields equal these values
     transparent: true               # events don't block time (shown as "free")
     all_day: auto                   # auto | true | false
     fields:                         # where each event property comes from; defaults shown
@@ -60,7 +60,7 @@ Each field is a key of the item, or a Liquid template if it contains `{{` or
 
 | Filter   | Example | Result |
 | -------- | ------- | ------ |
-| `webcal` | `{{ 'https://kingsbridge-fc.example/fixtures.ics' \| webcal }}` | `webcal://kingsbridge-fc.example/fixtures.ics` |
+| `webcal` | `{{ 'https://afc-richmond.example/fixtures.ics' \| webcal }}` | `webcal://afc-richmond.example/fixtures.ics` |
 
 ## Site settings used
 

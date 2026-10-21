@@ -20,14 +20,14 @@ event into a timed one instead of adding a second entry.
 # Kickoff time not announced yet
 - id: 2026-league-07
   kickoff: "2026-10-03"
-  home: Kingsbridge FC
-  away: Ford United
+  home: AFC Richmond
+  away: Tottenham Hotspur
 
 # Later: moved to Sunday for TV
 - id: 2026-league-07
   kickoff: "2026-10-04 13:30"
-  home: Kingsbridge FC
-  away: Ford United
+  home: AFC Richmond
+  away: Tottenham Hotspur
 ```
 
 ## End and duration
@@ -49,11 +49,11 @@ fields:
 - id: 2026-cup-r2
   kickoff: "2026-09-23 19:45"
   duration: 150
-  home: Kingsbridge FC
-  away: Eastfield Athletic
+  home: AFC Richmond
+  away: West Ham United
 ```
 
-An all-day event that spans several days, like a youth tournament weekend,
+An all-day event that spans several days, like the Richmond Kids Cup weekend,
 needs an `end`. As in iCalendar, the end of an all-day event is *exclusive*:
 the day after the last day.
 
@@ -61,7 +61,7 @@ the day after the last day.
 - id: 2026-u12-tournament
   kickoff: "2026-07-11"
   end: "2026-07-13"        # Saturday and Sunday
-  title: U12 Summer Tournament
+  title: Richmond Kids Cup (U12)
 ```
 
 ## The `all_day` option

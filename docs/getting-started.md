@@ -1,6 +1,6 @@
 # Getting started
 
-This page takes Kingsbridge FC from zero to a subscribable fixtures calendar.
+This page takes AFC Richmond from zero to a subscribable fixtures calendar.
 
 ## Requirements
 
@@ -46,15 +46,15 @@ Put the fixtures into a data file. Each list entry becomes one calendar event.
 # _data/fixtures.yml
 - id: 2026-league-01
   kickoff: "2026-08-15 15:00"
-  home: Kingsbridge FC
-  away: Harbour Town
-  venue: Riverside Stadium
+  home: AFC Richmond
+  away: Crystal Palace
+  venue: Nelson Road
 
 - id: 2026-league-02
   kickoff: "2026-08-22 17:30"
-  home: Northgate Rovers
-  away: Kingsbridge FC
-  venue: Northgate Park
+  home: Manchester City
+  away: AFC Richmond
+  venue: Etihad Stadium
 ```
 
 !!! tip "Quote your kickoff times"
@@ -69,14 +69,14 @@ plugin which of your keys holds which piece of information:
 
 ```yaml
 # _config.yml
-url: "https://kingsbridge-fc.example"
-title: "Kingsbridge FC"
+url: "https://afc-richmond.example"
+title: "AFC Richmond"
 timezone: Europe/London
 
 ical_feeds:
   - path: fixtures.ics
     source: data:fixtures
-    name: "Kingsbridge FC · Fixtures"
+    name: "AFC Richmond · Fixtures"
     fields:
       start: kickoff
       title: "{{ home }} vs {{ away }}"
@@ -106,12 +106,12 @@ bundle exec jekyll build
 
 ```text
 BEGIN:VEVENT
-UID:4f3c…@kingsbridge-fc.example
+UID:4f3c…@afc-richmond.example
 DTSTAMP:20260801T120000Z
 DTSTART:20260815T140000Z
 DTEND:20260815T154500Z
-SUMMARY:Kingsbridge FC vs Harbour Town
-LOCATION:Riverside Stadium
+SUMMARY:AFC Richmond vs Crystal Palace
+LOCATION:Nelson Road
 END:VEVENT
 ```
 
@@ -128,7 +128,7 @@ visitor's calendar app instead of downloading the file:
 ```
 
 That's it. Whenever you add a match or change a kickoff time and rebuild the
-site, your fans' calendars follow.
+site, your fans' calendars follow. Believe.
 
-Continue with the [full football club example](example.md) for multiple feeds,
+Continue with the [full AFC Richmond example](example.md) for multiple feeds,
 match pages and ticket links.

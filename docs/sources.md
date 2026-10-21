@@ -21,8 +21,8 @@ supported by Jekyll). The file must contain a list:
 # _data/fixtures.yml
 - id: 2026-league-01
   kickoff: "2026-08-15 15:00"
-  home: Kingsbridge FC
-  away: Harbour Town
+  home: AFC Richmond
+  away: Crystal Palace
 ```
 
 ```yaml
@@ -74,12 +74,12 @@ collections:
 
 ```markdown
 ---
-# _matches/2026-league-01-harbour-town.md
-title: Kingsbridge FC vs Harbour Town
+# _matches/2026-league-01-crystal-palace.md
+title: AFC Richmond vs Crystal Palace
 kickoff: "2026-08-15 15:00"
-venue: Riverside Stadium
+venue: Nelson Road
 ---
-Our first home game of the season …
+Our first home game of the season. Coach Lasso says: "Be a goldfish." …
 ```
 
 ```yaml
@@ -119,6 +119,17 @@ ical_feeds:
       start: event_date
 ```
 
+```markdown
+---
+# _posts/2026-08-01-watch-party.md
+title: Away day watch party at the Crown & Anchor
+type: event
+event_date: "2026-08-22 17:00"
+location: The Crown & Anchor, Richmond
+---
+Mae has promised enough pints for everyone. Wear your Greyhounds scarf.
+```
+
 ## Filtering with `where`
 
 `where` keeps only the items whose fields equal the given values. All
@@ -126,10 +137,10 @@ conditions must match. Values are compared as strings.
 
 ```yaml
 # Only home games
-where: { home: Kingsbridge FC }
+where: { home: AFC Richmond }
 
 # Only cup games at home
-where: { competition: Cup, home: Kingsbridge FC }
+where: { competition: Cup, home: AFC Richmond }
 ```
 
 `where` looks at the item's own keys, not at the mapped fields.

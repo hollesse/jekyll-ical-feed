@@ -44,10 +44,10 @@ Use tags for optional parts:
 
 ```yaml
 fields:
-  # "Riverside Stadium, Kingsbridge", or just "Riverside Stadium" without a city
+  # "Nelson Road, Richmond", or just "Nelson Road" without a city
   location: "{{ venue }}{% if city and city != empty %}, {{ city }}{% endif %}"
 
-  # "Cup: Kingsbridge FC vs Harbour Town" for cup games only
+  # "Cup: AFC Richmond vs Crystal Palace" for cup games only
   title: "{% if competition == 'Cup' %}Cup: {% endif %}{{ home }} vs {{ away }}"
 ```
 
@@ -55,7 +55,7 @@ Use the `default` filter for fallbacks, including fixed values:
 
 ```yaml
 fields:
-  # 105 minutes unless a match says otherwise (e.g. 135 for a cup game with extra time)
+  # 105 minutes unless a match says otherwise (e.g. 150 for a cup tie that might go to penalties)
   duration: "{{ duration | default: 105 }}"
 ```
 
@@ -84,21 +84,21 @@ fields:
 # _data/fixtures.yml
 - id: 2026-league-01
   kickoff: "2026-08-15 15:00"
-  home: Kingsbridge FC
-  away: Harbour Town
-  preview: Season opener under the floodlights.
-  tickets: https://tickets.kingsbridge-fc.example/2026-league-01
-  report: /news/2026/08/15/harbour-town-report/
+  home: AFC Richmond
+  away: Crystal Palace
+  preview: Season opener at Nelson Road. Believe.
+  tickets: https://tickets.afc-richmond.example/2026-league-01
+  report: /news/2026/08/15/crystal-palace-report/
 ```
 
 The event description then reads:
 
 ```text
-Season opener under the floodlights.
+Season opener at Nelson Road. Believe.
 
-Tickets: https://tickets.kingsbridge-fc.example/2026-league-01
+Tickets: https://tickets.afc-richmond.example/2026-league-01
 
-Match report: https://kingsbridge-fc.example/news/2026/08/15/harbour-town-report/
+Match report: https://afc-richmond.example/news/2026/08/15/crystal-palace-report/
 ```
 
 The values of `links` are plain keys; templates are not supported there.
