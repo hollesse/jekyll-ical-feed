@@ -122,14 +122,16 @@ ical_feeds:
 ```markdown
 ---
 # _posts/2026-08-01-farewell-to-mae.md
-title: A farewell to Mae at the Crown & Anchor
+title: Mae's wake at the Crown & Anchor
 type: event
 event_date: "2026-08-22 17:00"
 location: The Crown & Anchor, Richmond
 ---
 For as long as anyone can remember, Mae pulled the pints and kept the
 Greyhounds honest. We say goodbye where she would have wanted it: in her pub.
-Bring your scarf, raise a glass, and share your favourite Mae story.
+Baz, Jeremy and Paul, the Crown & Anchor's new landlords, are hosting and
+promise to honour her one request. Bring your scarf, raise a glass, and share
+your favourite Mae story.
 ```
 
 ## Filtering with `where`
